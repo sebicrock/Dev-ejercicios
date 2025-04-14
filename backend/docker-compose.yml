@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  auth_service:
+    build:
+      context: ./auth_service
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+    networks:
+      - event-network
+
+  event_service:
+    build:
+      context: ./event_service
+    ports:
+      - "5001:5000"
+    environment:
+      - FLASK_ENV=development
+    networks:
+      - event-network
+
+networks:
+  event-network:
+    driver: bridge

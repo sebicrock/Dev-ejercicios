@@ -1,0 +1,5 @@
+Flask
+SQLAlchemy
+Flask-Cors
+Flask-Migrate
+python-dotenv
